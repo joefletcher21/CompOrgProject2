@@ -35,3 +35,8 @@ main:
    remove_leading_spaces:
    li $t8, 32                      
    lw $a0, 8($sp)
+   removespaceinfront:                            
+   lb $t7, 0($a0)   
+   beq $t8, $t7, removefirstcharacter     
+   move $t7, $a0                          
+   jr $ra
