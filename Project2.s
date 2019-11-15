@@ -94,3 +94,8 @@ main:
    la $a0, null_errorMessage
    syscall
    j end
+   length_error:
+   li $v0, 4
+   la $a0, length_errorMessage
+   syscall
+   j end
