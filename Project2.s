@@ -26,3 +26,9 @@ main:
    jal remove_leading_spaces
    jal removespaceafter
    jal checkLength
+   lw $ra, 4($sp) 
+   lw $t8, 0($sp)
+   addi $sp, $sp, 8 
+   addi $sp, $sp, -4
+   sw $t8, 0($sp)   
+   jr $ra 
