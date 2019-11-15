@@ -152,3 +152,11 @@ main:
    bne $t4, $zero, A_to_Y
    slti $t4, $s5, 122 
    bne $t4, $zero, a_to_y
+   zero_to_nine:
+   addi $s5, $s5, -48
+   j next_step
+   A_to_Y:
+   addi $s5, $s5, -55
+   j next_step
+   a_to_y:
+   addi $s5, $s5, -87
