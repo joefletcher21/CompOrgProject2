@@ -142,4 +142,13 @@ main:
    li $s3, 2
    li $s6, 1
    li $s1, 0
-   
+   convertString: 
+   lb $s5, 0($a0)
+   beqz $s5, Totalsum	
+   beq $s5, $t2, Totalsum 
+   slti $t4, $s5, 58 
+   bne $t4, $zero, zero_to_nine
+   slti $t4, $s5, 90 
+   bne $t4, $zero, A_to_Y
+   slti $t4, $s5, 122 
+   bne $t4, $zero, a_to_y
