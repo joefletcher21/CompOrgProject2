@@ -65,3 +65,9 @@ main:
    updatelastIndex:
    move $t1, $t8 
    j removespaceafter_increment
+   end_removespaceafter:
+   add $t4, $zero, $a0 
+   add $t4, $t4, $t1 
+   addi $t4, $t4, 1  
+   sb $zero, 0($t4)    
+   jr $ra
