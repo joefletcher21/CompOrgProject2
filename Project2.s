@@ -100,27 +100,30 @@ main:
    syscall
    j end
    check_String:
- move $a0, $t7 
-check_StringLoop:
- li $v0, 11
- lb $t3, 0($a0)
- move $t8, $a0
- move $a0, $t3
- move $a0, $t8
- li $t8, 10 
- beq $t3, $zero, base_converter
- slti $t4, $t3, 48 
- bne $t4, $zero, base_error
- slti $t4, $t3, 58 
- bne $t4, $zero, Increment
- slti $t4, $t3, 65 
- bne $t4, $zero, base_error 
- slti $t4, $t3, 90 
- bne $t4, $zero, Increment
- slti $t4, $t3, 97 
- bne $t4, $zero, base_error 
- slti $t4, $t3, 122 
- bne $t4, $zero, Increment
- bgt $t3, 117, base_error 
- li $t8, 10 
- beq $t3, $t8, base_converter
+   move $a0, $t7 
+   check_StringLoop:
+   li $v0, 11
+   lb $t3, 0($a0)
+   move $t8, $a0
+   move $a0, $t3
+   move $a0, $t8
+   li $t8, 10 
+   beq $t3, $zero, base_converter
+   slti $t4, $t3, 48 
+   bne $t4, $zero, base_error
+   slti $t4, $t3, 58 
+   bne $t4, $zero, Increment
+   slti $t4, $t3, 65 
+   bne $t4, $zero, base_error 
+   slti $t4, $t3, 90 
+   bne $t4, $zero, Increment
+   slti $t4, $t3, 97 
+   bne $t4, $zero, base_error 
+   slti $t4, $t3, 122 
+   bne $t4, $zero, Increment
+   bgt $t3, 117, base_error 
+   li $t8, 10 
+   beq $t3, $t8, base_converter
+   Increment:
+   addi $a0, $a0, 1
+   j check_StringLoop
