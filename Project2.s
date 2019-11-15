@@ -127,3 +127,8 @@ main:
    Increment:
    addi $a0, $a0, 1
    j check_StringLoop
+   base_error:
+   li $v0, 4
+   la $a0, base_errorMessage
+   syscall
+   j end
