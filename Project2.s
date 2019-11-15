@@ -59,3 +59,9 @@ main:
    beqz $t4, end_removespaceafter        
    addi $t4, $t4, -22
    bnez $t4, updatelastIndex 
+   removespaceafter_increment:
+   addi $t8, $t8, 1              
+   j removespaceafter_loop
+   updatelastIndex:
+   move $t1, $t8 
+   j removespaceafter_increment
