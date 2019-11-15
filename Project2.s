@@ -40,3 +40,6 @@ main:
    beq $t8, $t7, removefirstcharacter     
    move $t7, $a0                          
    jr $ra
+   removefirstcharacter:
+   addi $a0, $a0, 1
+   j removespaceinfront
