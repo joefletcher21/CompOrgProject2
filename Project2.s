@@ -181,3 +181,28 @@ main:
     addi $s7, $s7, -1
     addi $a0, $a0, 1
     j convertString
+Base_raised_toOne:
+ li $s4, 31
+ mult $s5, $s4
+ mflo $s0
+ add $t8, $t8, $s0
+ addi $s7, $s7, -1
+ addi $a0, $a0, 1
+ j convertString
+Base_raised_toZero:
+ li $s4, 1
+ mult $s5, $s4
+ mflo $s0
+ add $t8, $t8, $s0
+Obtained_value:
+ addi $sp, $sp, -4
+ sw $t8, 0($sp) 
+ jr $ra 
+Totalsum:
+ li $v0, 1
+ lw $a0, 4($sp) 
+ syscall
+ jr $ra
+end:
+ li $v0,10 
+ syscall
