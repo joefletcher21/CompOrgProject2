@@ -71,3 +71,9 @@ main:
    addi $t4, $t4, 1  
    sb $zero, 0($t4)    
    jr $ra
+   checkLength:
+   li $t0, 0
+   add $a0, $t7, $zero
+   lb $t2, 0($a0)
+   addi $t2, $t2, -10    
+   beq $t2, $zero, null_error 
