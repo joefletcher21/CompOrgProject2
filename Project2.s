@@ -160,3 +160,24 @@ main:
    j next_step
    a_to_y:
    addi $s5, $s5, -87
+   next_step:
+    beq $s7, $s2, Base_raised_toThree
+    beq $s7, $s3, Base_raised_toTwo
+    beq $s7, $s6, Base_raised_toOne
+    beq $s7, $s1, Base_raised_toZero
+   Base_raised_toThree:
+    li $s4, 29791
+    mult $s5, $s4
+    mflo $s0
+    add $t8, $t8, $s0
+    addi $s7, $s7, -1
+    addi $a0, $a0, 1
+    j convertString
+   Base_raised_toTwo:
+    li $s4, 961
+    mult $s5, $s4
+    mflo $s0
+    add $t8, $t8, $s0
+    addi $s7, $s7, -1
+    addi $a0, $a0, 1
+    j convertString
