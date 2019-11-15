@@ -48,3 +48,9 @@ main:
    sub $t2, $t7, $t2 
    li $t1, 0  
    li $t8, 0
+   removespaceafter_loop:
+   add $t4, $t2, $t8
+   addi $t4, $t4, -1000
+   beqz $t4, end_removespaceafter        
+   add $t4, $t8, $a0
+   
