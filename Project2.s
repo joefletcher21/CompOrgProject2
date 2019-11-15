@@ -53,4 +53,9 @@ main:
    addi $t4, $t4, -1000
    beqz $t4, end_removespaceafter        
    add $t4, $t8, $a0
-   
+   lb $t4, 0($t4)          
+   beq $t4, $zero, end_removespaceafter  
+   addi $t4, $t4, -10
+   beqz $t4, end_removespaceafter        
+   addi $t4, $t4, -22
+   bnez $t4, updatelastIndex 
