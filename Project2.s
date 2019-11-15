@@ -9,3 +9,9 @@ main:
    la $a0, user_Input  
    li $a1, 1000
    syscall 
+   addi $sp, $sp, -8
+   sw $a0, 4($sp)
+   sw $ra, 0($sp) 
+   jal userInput_loop
+   lw $t8, 0($sp)  
+   addi $sp, $sp, 4 
