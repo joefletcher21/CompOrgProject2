@@ -85,4 +85,7 @@ main:
    addi $a0, $a0, 1
    addi $t0, $t0, 1
    j checkLength_Loop
-   
+   stringDone:
+   slti $t5, $t0, 5
+   beq $t5, $zero, length_error
+   bne $t5, $zero, check_String
