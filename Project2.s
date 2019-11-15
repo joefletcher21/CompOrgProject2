@@ -132,3 +132,14 @@ main:
    la $a0, base_errorMessage
    syscall
    j end
+   base_converter:
+   move $a0, $t7 
+   li $t2, 10
+   li $t8, 0 
+   add $s7, $s7, $t0
+   addi $s7, $s7, -1 
+   li $s2, 3
+   li $s3, 2
+   li $s6, 1
+   li $s1, 0
+   
