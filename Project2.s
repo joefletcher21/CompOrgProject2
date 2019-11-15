@@ -32,3 +32,6 @@ main:
    addi $sp, $sp, -4
    sw $t8, 0($sp)   
    jr $ra 
+   remove_leading_spaces:
+   li $t8, 32                      
+   lw $a0, 8($sp)
